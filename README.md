@@ -1,2 +1,2 @@
 # HelloWorldLaravel
-Tarea#1 diseño de softwaressss
+Tarea#1 diseño de software
