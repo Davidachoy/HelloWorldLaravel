@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Signin Template · Bootstrap v5.3</title>
+    <title>Crear Usuario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
 
@@ -103,16 +103,21 @@ body {
   <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form method="POST" action="{{route('createUser')}}" >
+  @csrf
     <h1 class="h3 mb-3 fw-normal">Crear Cuenta</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Usuario">
+      <input type="text" class="form-control  @error('username') is-invalid @enderror" 
+      name="username"
+      id="floatingInput" placeholder="Usuario">
       <label for="floatingInput">Usuario</label>
-
+     
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+      <input type="password"
+      name="password"
+      class="form-control" id="floatingPassword" placeholder="Contraseña">
       <label for="floatingPassword">Contraseña</label>
     </div>
 
@@ -122,15 +127,21 @@ body {
       type="submit">Crear cuenta
       </button>
 
-<a href="../index.html">
+<a href="/">
 
     <button class="mt-2 w-100 btn btn-lg btn-primary" type="button">Atras</button>
 </a>
 
-
-
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
   </form>
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 </main>
 
 

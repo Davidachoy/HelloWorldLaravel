@@ -13,6 +13,7 @@
   
        
 <style>
+    html,
 body {
   height: 100%;
 }
@@ -130,10 +131,9 @@ body {
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
-    <a href="{{ url('/createUser') }}" >
+    <a href="{{ url('/registro') }}" >
     <button class="mt-2 w-100 btn btn-lg btn-primary"  type="button">Crear cuenta</button>
    </a>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
   </form>
   
 </main>
