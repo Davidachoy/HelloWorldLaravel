@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\Usuario;
 
 class UserController extends Controller
 {
@@ -11,15 +12,18 @@ class UserController extends Controller
     {
          return view('components.login');
     } 
+    public function create()
+    {
+         return view('components.create');
+    } 
 
 
     public function createUser(Request $request)
     {
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->save();
+        $Usuario = new Usuario;
+        $Usuario->username = $request->username;
+        $Usuario->password = bcrypt($request->password);
+        $Usuario->save();
 
         return redirect()->back()->with('success', 'Usuario creado exitosamente');
     }
