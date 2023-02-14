@@ -30,7 +30,7 @@ class UserController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'username' => 'required|unique:Usuarios',
+            'username' => 'required|unique:usuarios',
         ]);
     
         if ($validator->fails()) {
