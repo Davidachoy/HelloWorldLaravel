@@ -46,6 +46,7 @@ body {
 
 .btn-primary, .btn-primary:hover {
     background-color: #77A6A1 !important;
+    border-color: #7795c1 !important;
 }
 
 .h3 {
