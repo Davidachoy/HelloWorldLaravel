@@ -21,9 +21,7 @@ body {
 body {
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+  background-color: blue;
 }
 
 .form-signin {
@@ -37,14 +35,40 @@ body {
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background-color: #1B5359;
+  justify-content: space-between
+}
+
+.btn-primary, .btn-primary:hover {
+    background-color: #77A6A1 !important;
+}
+
+.h3 {
+  color: #F2AE30  !important;
+}
+.h1 {
+  margin-bottom: 0 !important;
 }
 
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.secondColor{
+  background-color: #F29D35;
+  color: #F29D35;
+  width: '100%';
+  flex: 1;
+  height: -webkit-fill-available;
+}
+
+.form-signin{
+  flex: 1
 }
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -115,28 +139,31 @@ body {
         </style>
     </head>
     <body class="text-center">
-    <main class="form-signin w-100 m-auto">
-  <form>
+      <main class="form-signin w-100 m-auto">
+        <form>
+          
+          <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
+
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Usuario">
+            <label for="floatingInput">Usuario</label>
+
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+          <a href="{{ url('/registro') }}" >
+          <button class="mt-2 w-100 btn btn-lg btn-primary"  type="button">Crear cuenta</button>
+        </a>
+        </form>
+        
+      </main>
+      <h1 class="secondColor"></h1>
     
-    <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
-
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Usuario">
-      <label for="floatingInput">Usuario</label>
-
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
-      <label for="floatingPassword">Contraseña</label>
-    </div>
-
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
-    <a href="{{ url('/registro') }}" >
-    <button class="mt-2 w-100 btn btn-lg btn-primary"  type="button">Crear cuenta</button>
-   </a>
-  </form>
-  
-</main>
-
     </body>
+    </body>
+    
 </html>
