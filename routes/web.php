@@ -19,3 +19,7 @@ Route::get('/registro', [UserController::class, 'create']);
 
 Route::post('/createUser', [UserController::class, 'createUser']) -> name("createUser");
 
+Route::post('/logInUser', [UserController::class, 'login']) -> name("logInUser");
+
+Route::get('/main', [UserController::class, 'main']) -> name("main");
+

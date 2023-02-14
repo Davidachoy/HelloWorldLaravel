@@ -116,17 +116,21 @@ body {
     </head>
     <body class="text-center">
     <main class="form-signin w-100 m-auto">
-  <form>
-    
+  <form method="POST" action="{{route('logInUser')}}" > 
+  @csrf
     <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Usuario">
+      <input 
+      name="username"
+      type="text" class="form-control  @error('username') is-invalid @enderror" id="floatingInput" placeholder="Usuario">
       <label for="floatingInput">Usuario</label>
 
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+      <input 
+      name="password"
+      type="password" class="form-control  @error('username') is-invalid @enderror" id="floatingPassword" placeholder="Contraseña">
       <label for="floatingPassword">Contraseña</label>
     </div>
 
@@ -135,6 +139,15 @@ body {
     <button class="mt-2 w-100 btn btn-lg btn-primary"  type="button">Crear cuenta</button>
    </a>
   </form>
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
   
 </main>
 
