@@ -1,3 +1,3 @@
 <div>
-    <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
+<p>ID de usuario: {{ session('user_id') }}</p>
 </div>

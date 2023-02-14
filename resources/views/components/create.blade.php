@@ -106,31 +106,6 @@ body {
   <form method="POST" action="{{route('createUser')}}" >
   @csrf
     <h1 class="h3 mb-3 fw-normal">Crear Cuenta</h1>
-    <h1>
-      <?php   
-          // Connecting to the Database
-          $servername = "localhost";
-          $username = "root";
-          $password = "";
-          $database = "laravellhelloworld";
-  
-          // Create a connection
-          $conn = mysqli_connect($servername, $username, $password, $database);
-          // Die if connection was not successful
-          if (!$conn){
-              die("Sorry we failed to connect: ". mysqli_connect_error());
-          }
-          else {
-            $sql = "INSERT INTO `users`(`Username`, `Password`) VALUES ('Daniel', '1234')";
-            $result = mysqli_query($conn, $sql);
-
-            if($result){
-              $sql = "SELECT `Username`, `Password` FROM `users`"
-              $result = $conn->query($sql);
-            }
-          }
-    ?>  
-    </h1>
     <div class="form-floating">
       <input type="text" class="form-control  @error('username') is-invalid @enderror" 
       name="username"
