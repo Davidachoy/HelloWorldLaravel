@@ -60,7 +60,10 @@ class UserController extends Controller
         // Verificar si existe y si la contraseña es correcta
         if ($Usuario && Hash::check($password, $Usuario->password))  {
             // Iniciar sesión y redirigir al dashboard
-            $request->session()->put('user_id', $Usuario->id);
+            $Usuario->counter = $Usuario->counter + 1;
+            $request->session()->put('username', $Usuario->username);
+            $request->session()->put('counter', $Usuario->counter);
+            $Usuario->save();
             return redirect()->intended('main');
         } else {
             return redirect()->back()->withInput()->withErrors(['username' => 'Usuario o contraseña incorrectos']);

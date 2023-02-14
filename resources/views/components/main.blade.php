@@ -1,3 +1,3 @@
 <div>
-<p>ID de usuario: {{ session('user_id') }}</p>
+<p> Hola {{ session('username') }} usted ha iniciado session:  {{ session('counter') }}</p>
 </div>

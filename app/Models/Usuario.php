@@ -12,10 +12,10 @@ class Usuario extends Model
     protected $fillable = [
         'username',
         'password',
+        'counter'
     ];
 
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 }
