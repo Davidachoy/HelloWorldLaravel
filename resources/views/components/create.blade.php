@@ -59,11 +59,20 @@ body {
   margin-bottom: 15px;
 }
 .secondColor{
+  display: flex;
+  padding-right: 10px;
   background-color: #F29D35;
   color: #F29D35;
   width: '100%';
   flex: 1;
   height: -webkit-fill-available;
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+}
+
+#names{
+  color: black;
+  font: Icon
 }
 
 .form-signin{
@@ -178,7 +187,15 @@ body {
     </div>
 @endif
 </main>
-<h1 class="secondColor"></h1>
+<h1 class="secondColor">
+<pre id='names'>
+          David Achoy Yakimova
+          Daniel Brenes Reyes
+          Andy Cruz Elizondo
+          Jose Sequeira Chacón
+          Jefry Cuendiz Cuendiz 
+        </pre>
+</h1>
 
 
   </body>
